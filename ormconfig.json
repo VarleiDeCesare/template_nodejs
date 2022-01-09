@@ -4,7 +4,7 @@
     "host": "localhost",
     "username": "root",
     "password": "root",
-    "database": "livraria-node",
+    "database": "users_directory",
     "migrations": [
         "./src/database/migrations/*.ts"
     ],

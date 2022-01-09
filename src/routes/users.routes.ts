@@ -1,9 +1,12 @@
 import { Router } from 'express';
+import { UserController } from '../controllers/UserController';
+import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
 const usersRoutes = Router();
 
-/*const controller = new controller();*/
+const userController = new UserController()
 
-/*booksRoutes.get("/", controller.method);*/
+usersRoutes.post("/", userController.create);
+usersRoutes.get("/", ensureAuthenticated, userController.listAll);
 
 export default usersRoutes;
